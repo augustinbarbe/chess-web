@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(
-    name='chess-web',
-    packages=['chess-web'],
+    name='chessweb',
+    packages=['chessweb'],
     include_package_data=True,
     install_requires=[
         'flask',

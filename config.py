@@ -1,9 +1,7 @@
 DEBUG = False
 
-# url of the container manager
+# url of the container manager service
 CONTAINER_MANAGER = "localhost:5001"
 
-# Celery configuration
-BROKER_URL = ""
-BACKEND_URL = ""
-
+# Redis configuration for pubsub notifications
+REDIS_URL = "redis://localhost:6379/2"

@@ -1,7 +1,6 @@
 """ Web application chess-web"""
 
 from flask import Flask
-from celery import Celery
 
 
 app = Flask(__name__, instance_relative_config=True)
