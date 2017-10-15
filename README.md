@@ -6,9 +6,19 @@ It relies on flask, including a celery job queuer to start the battle. A communi
 
 ## Installation
 
+### Run with docker
+
+Just build the image from the Dockerfile
 ```
-git clone git@github.com:augustinbarbe/chess-web.git
-cd dockerweb-master
 docker build -t dockerweb:dev .
 docker run -p 5000:8000 dockerweb:dev
+```
+
+### Run locally
+
+Or install the package on your python environment (don't forget to use virtual environements) and run it:
+```
+pip install -r requirements.txt
+pip install -e .
+python manage.py
 ```
