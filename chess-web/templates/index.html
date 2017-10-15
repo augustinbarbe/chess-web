@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Web Chess Arena</title>
+        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/chessboard-0.3.0.min.css') }}">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+        </script>
+        <script src="{{ url_for('static', filename='js/chessboard-0.3.0.js') }}"></script>
+    </head>
+    <body>
+        <div id="board1" style="width: 400px"></div>
+        <input type="button" id="startBtn" value="Start" />
+        <input type="button" id="clearBtn" value="Clear" />
+        <script src = "{{ url_for('static', filename='js/main-board.js') }}"></script>
+    </body>
+</html>
