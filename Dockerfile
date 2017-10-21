@@ -12,4 +12,4 @@ COPY . .
 
 RUN pip install --editable .
 
-CMD ["/usr/local/bin/gunicorn", "-b", "0.0.0.0:8000", "chessweb:app"]
+CMD ["/usr/local/bin/gunicorn", "-b", "0.0.0.0:8000", "--log-level", "INFO", "chessweb:app"]

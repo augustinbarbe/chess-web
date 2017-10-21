@@ -16,9 +16,11 @@ docker run -p 5000:8000 dockerweb:dev
 
 ### Run locally
 
-Or install the package on your python environment (don't forget to use virtual environements) and run it:
+
+To install the package on your local python (don't forget to use virtual environements) and run it:
+
 ```
 pip install -r requirements.txt
 pip install -e .
-python manage.py
+python manage.py run
 ```

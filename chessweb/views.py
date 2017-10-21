@@ -2,6 +2,7 @@
 
 from flask import render_template
 import flask
+import requests
 
 from . import app
 
@@ -12,5 +13,6 @@ def index():
 
 @app.route('/create', methods=['POST'])
 def create():
-    print('requesting resource')
-    return flask.Response(status=204)
+    r = requests.post(app.config['CONTAINER_MANAGER_URL'])
+    print(r.content)
+    return flask.Response(status=r.status_code)
