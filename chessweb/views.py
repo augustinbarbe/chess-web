@@ -17,7 +17,5 @@ def create():
                           app.config['CONTAINER_MANAGER_HOSTNAME'] + \
                           ':' + app.config['CONTAINER_MANAGER_PORT'] +\
                           '/create'
-    print(chessdocker_service)
     r = requests.post(chessdocker_service)
-    print(r.content)
     return flask.Response(status=r.status_code)
