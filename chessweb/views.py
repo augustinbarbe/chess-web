@@ -6,6 +6,14 @@ import requests
 
 from . import app
 
+def event_stream(gameid):
+    pubsub = red.pubsub()
+    pubsub.subscribe(gameid)
+    # TODO: handle client disconnection.
+    for message in pubsub.listen():
+        yield message['data']
+
+
 
 @app.route('/')
 def index():
@@ -18,4 +26,9 @@ def create():
                           ':' + app.config['CONTAINER_MANAGER_PORT'] +\
                           '/create'
     r = requests.post(chessdocker_service)
+    r.content
     return flask.Response(status=r.status_code)
+
+@app.route('/update/<gameid>', methods=['GET'])
+def stream(gameid):
+    return flask.Response(event_stream(gameid))
